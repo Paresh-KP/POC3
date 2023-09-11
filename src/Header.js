@@ -5,17 +5,17 @@ import {UserContext} from "./UserContext";
 export default function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
   useEffect(() => {
-    fetch('http://localhost:4000/profile', {
+    fetch('/.netlify/functions/profile', {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
         setUserInfo(userInfo);
       });
     });
-  }, [setUserInfo]);
+  }, []);
 
   function logout() {
-    fetch('http://localhost:4000/logout', {
+    fetch('/.netlify/functions/logout', {
       credentials: 'include',
       method: 'POST',
     });
