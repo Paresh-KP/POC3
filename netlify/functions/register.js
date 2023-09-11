@@ -31,8 +31,10 @@ exports.handler = async (event, context) => {
   //     body: JSON.stringify({ error: 'An error occurred' }),
   //   };
   // }
-  return{
-    statusCode: 200,
-    body: JSON.stringify({ error: 'An error occurred' }),
-  };
+  const responseBody = { message: 'Registration successful' };
+ console.log(responseBody);
+    return {
+      statusCode: 200,
+      body: JSON.stringify(responseBody),
+    };
 };
