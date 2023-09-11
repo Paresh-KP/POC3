@@ -13,6 +13,8 @@ export default function RegisterPage() {
     if (response.status === 200) {
       alert('registration successful');
     } else {
+      const responseBody = await response.text();
+  console.error('Response body:', responseBody);
       alert('registration failed');
     }
   }
