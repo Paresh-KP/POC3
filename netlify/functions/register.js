@@ -35,6 +35,10 @@ exports.handler = async (event, context) => {
  console.log(responseBody);
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': 'https://main--magnificent-stroopwafel-55f02d.netlify.app', // Replace with your frontend domain
+        'Access-Control-Allow-Headers': 'Content-Type',
+      },
       body: JSON.stringify(responseBody),
     };
 };
